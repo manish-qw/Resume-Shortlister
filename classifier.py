@@ -1,10 +1,11 @@
-"""
-Tier Classifier — maps composite scores to Tier A / B / C.
-Configurable thresholds from settings.
-"""
+from typing import Literal
+from config import settings
 
-# TODO: Implement in Phase 8
-# - classify(composite: float, config) -> Literal["A", "B", "C"]
-# - Tier A: >= 75 (Fast-track)
-# - Tier B: 50-74 (Technical Screen)
-# - Tier C: < 50 (Needs Evaluation)
+def classify(composite: float) -> Literal["A", "B", "C"]:
+    """Classify candidate tier based on composite score."""
+    if composite >= settings.tier_a_threshold:
+        return "A"
+    elif composite >= settings.tier_b_threshold:
+        return "B"
+    else:
+        return "C"
