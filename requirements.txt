@@ -1,0 +1,32 @@
+# Core Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# PDF Processing
+pdfplumber==0.11.4
+
+# AI / LLM
+anthropic==0.43.0
+
+# Scoring - Local Models
+sentence-transformers==3.3.1
+rank-bm25==0.2.2
+nltk==3.9.1
+
+# Data Validation
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# Frontend
+streamlit==1.41.1
+
+# HTTP Client (for future verification engine)
+httpx==0.28.1
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.25.0
+
+# Utilities
+python-dotenv==1.0.1
