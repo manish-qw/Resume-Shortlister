@@ -14,7 +14,11 @@ class Settings(BaseSettings):
     # ── API Keys ──────────────────────────────────────────────
     anthropic_api_key: str = Field(
         default="",
-        description="Anthropic API key for Claude calls",
+        description="Anthropic API key for Claude calls (optional if using Gemini)",
+    )
+    gemini_api_key: str = Field(
+        default="",
+        description="Google Gemini API key",
     )
 
     # ── Model Configuration ───────────────────────────────────
