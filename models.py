@@ -1,15 +1,8 @@
-"""
-Pydantic models — single source of truth for all data contracts.
-
-All models used across the parser, scoring engine, classifier,
-question generator, and API layer are defined here.
-"""
-
 from typing import List, Optional, Dict, Literal
 from pydantic import BaseModel, Field, field_validator
 
 
-# ── Parser Models (Resume & JD) ──────────────────────────────────────────────
+# Parser Models (Resume & JD)
 
 class Skill(BaseModel):
     name: str = Field(description="Name of the skill, e.g., 'Python', 'AWS Kinesis'")
@@ -48,7 +41,7 @@ class JobDescription(BaseModel):
     raw_text: str = Field(description="The original raw text of the job description")
 
 
-# ── Scoring Output Models ──────────────────────────────────────────────────
+# Scoring Output Models
 
 class AnalogousPair(BaseModel):
     resume_skill: str
@@ -81,7 +74,7 @@ class ScoreResult(BaseModel):
         return v
 
 
-# ── Evaluation Models ──────────────────────────────────────────────────────
+# Evaluation Models
 
 class ScoringConfig(BaseModel):
     weight_exact_match: float = 0.30
@@ -97,7 +90,7 @@ class EvaluationResult(BaseModel):
     overall_reasoning: str = Field(description="Synthesis of all scorer outputs")
 
 
-# ── API Models ─────────────────────────────────────────────────────────────
+# API Models
 
 class EvaluationRequest(BaseModel):
     resume: ResumeData

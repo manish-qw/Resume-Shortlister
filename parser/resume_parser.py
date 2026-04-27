@@ -27,10 +27,10 @@ def _call_gemini_with_retries(prompt: str, response_model: Type[T], max_retries:
         f"Do not include any explanation or markdown formatting outside the JSON."
     )
 
-    # Use gemini-1.5-flash or pro for structured output
+    # Use gemini-2.5-flash-lite or pro for structured output
     # We use response_mime_type to enforce JSON output
     model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+        model_name="gemini-2.5-flash-lite",
         system_instruction=system_instruction,
         generation_config=genai.GenerationConfig(
             response_mime_type="application/json",

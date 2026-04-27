@@ -2,7 +2,7 @@
 
 import pytest
 from pydantic import ValidationError
-from resume_shortlister.models import ScoreResult, AnalogousPair
+from models import ScoreResult, AnalogousPair
 
 def test_score_clamping():
     # Test valid score
